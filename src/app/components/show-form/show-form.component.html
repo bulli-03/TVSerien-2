@@ -1,0 +1,17 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
+
+<form>
+  <h2>Serie hinzufügen:</h2>
+  <div class="mb-2">
+      <label for="newShowID">ID:</label>
+      <input class="form-control" id="newShowID" name="newShowID"
+           type="number" placeholder="Hier die ID der Serie eingeben!" [(ngModel)]="show.id">
+  </div>
+  <div class="mb-2">
+    <label for="newShowName">Titel:</label>
+    <input class="form-control" id="newShowName" name="newShowName"
+           type=string placeholder="Hier den Titel der Serie eingeben!" [(ngModel)]="show.title" >
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="save()">absenden</button>
+</form>

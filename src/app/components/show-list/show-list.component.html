@@ -1,0 +1,26 @@
+<table class="table table-striped table-hover">
+  <thead class="table-dark">
+  <tr>
+    <th>Id</th>
+    <th>Serientitel</th>
+    <th> </th>
+    <th> </th>
+  </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let s of shows">
+      <tr *ngIf="!toEdit(s)">
+        <td (click)="showDetails(s)">{{s.id}}</td>
+        <td (click)="showDetails(s)">{{s.title}}</td>
+        <td><button type="button" class="material-icons" (click)="edit(s)">edit</button></td>
+        <td><button type="button" class="material-icons" (click)="delete(s)">delete</button></td>
+      </tr>
+      <tr *ngIf="toEdit(s)">
+        <td><input class="form-control" id="newShowID" type="number" [(ngModel)]="s.id"></td>
+        <td><input class="form-control" id="newShowName" type=string [(ngModel)]="s.title"></td>
+        <td> </td>
+        <td><button type="button" class="material-icons" (click)="saveEdit()">save</button></td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
